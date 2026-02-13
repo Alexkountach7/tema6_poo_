@@ -1,6 +1,6 @@
 package org.example;
 
-public class TarjetaCredito {
+public class TarjetaCredito extends MetodoPago {
     private String nro_tarjeta;
     private String tipo;
 
@@ -10,7 +10,20 @@ public class TarjetaCredito {
 
     }
 
-    public void 
+    public Boolean validartarjeta(String nro_tarjeta, String tipo) {
+        if (nro_tarjeta.length() != 16) {
+            return false;
+
+        }
+        if (!tipo.equalsIgnoreCase("VISA") && !tipo.equalsIgnoreCase("MASTERCARD") && !tipo.equalsIgnoreCase("MAESTRO")){
+            return false;
+        }
+
+        return true;
+
+    }
+
+
 
     public String getNro_tarjeta() {
         return nro_tarjeta;
@@ -26,5 +39,10 @@ public class TarjetaCredito {
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public void procesarPago(Double importe) {
+        System.out.println("Procesando pago de "+importe+" € con tarjeta de credito visa");
     }
 }
