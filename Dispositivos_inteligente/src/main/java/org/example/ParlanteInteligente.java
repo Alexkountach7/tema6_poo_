@@ -8,7 +8,7 @@ public class ParlanteInteligente extends Dispositivo {
 
     @Override
     public void encender() {
-        if (isEstado()) {
+        if (isEstado()) {  // super.estado
             System.out.println("el parlante ya esta encendido ");
         } else {
             setEstado(true);

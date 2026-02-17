@@ -8,7 +8,7 @@ public class Televisor extends Dispositivo implements ControlRemoto{
 
     @Override
     public void encender() {  // metodo abstracto
-        if (isEstado()){
+        if (isEstado()){ // se puede hacer con super si lo tengo protegido
             System.out.println("la television ya esta encendida");
         }else {
             setEstado(true); // con setestado se cambia el estado de false a true

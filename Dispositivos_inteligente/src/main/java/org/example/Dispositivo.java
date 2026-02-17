@@ -1,8 +1,8 @@
 package org.example;
 
 public abstract class Dispositivo { // dispositivo es una clase abstracta
-    private String nombre;
-    private boolean estado;
+    protected String nombre;
+    protected boolean estado;
 
     public Dispositivo(String nombre) {
         this.nombre=nombre;

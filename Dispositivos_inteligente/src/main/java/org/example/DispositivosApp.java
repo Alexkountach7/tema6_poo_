@@ -13,10 +13,13 @@ public class DispositivosApp {
         listadispositivo.add(dispositivo1);
         listadispositivo.add(dispositivo2);
         listadispositivo.add(dispositivo3);
-        for (Dispositivo dispositivo : listadispositivo){
+
+        for (Dispositivo dispositivo : listadispositivo) {
+            dispositivo.encender();
             dispositivo.encender();
 
-            if (dispositivo instanceof ControlRemoto){
+            if (dispositivo instanceof ControlRemoto) {
+                // ((controlaremoto) dipositivo).sincronizar();
                 ControlRemoto control_ = (ControlRemoto) dispositivo;
                 control_.sincronizar();
             }
@@ -25,7 +28,60 @@ public class DispositivosApp {
             dispositivo.apagar();
 
         }
+        Dispositivo proyector = new Dispositivo("optoma") {
+            @Override
+            public void encender() {
+                if (estado) {
+                    System.out.println("el proyector ya esta encendido");
+                } else {
+                    System.out.println("encendiendo proyetor con brillo automatico ");
+                    estado = true;
+                }
+            }
 
+        };
+        proyector.encender();
+
+        ControlRemoto proyector_sinc = new ControlRemoto() {
+            @Override
+            public void sincronizar() {
+                System.out.println("sincronizar proyector con ");
+            }
+        };
+        proyector_sinc.sincronizar();
+
+        Dispositivo horno_ia = new Dispositivo("horno chatgo") {
+            @Override
+            public void encender() {
+                if (estado){
+                    System.out.println("el horno ya esta encendido");
+                }else {
+                    System.out.println("calentando horno con ajuste");
+                    estado = true;
+                }
+            }
+        };
+
+        horno_ia.encender();
+        listadispositivo.add(proyector);
+        listadispositivo.add(horno_ia);
+        for (Dispositivo dispositivo : listadispositivo) {
+            dispositivo.encender();
+            dispositivo.encender();
+
+            if (dispositivo instanceof ControlRemoto) {
+                // ((controlaremoto) dipositivo).sincronizar();
+                ControlRemoto control_ = (ControlRemoto) dispositivo;
+                proyector_sinc.sincronizar();
+            } else if (dispositivo.nombre.equals("optoma")) {
+                proyector_sinc.sincronizar();
+
+            }
+
+            dispositivo.mostrarestado();
+            dispositivo.apagar();
+            dispositivo.apagar();
+
+        }
     }
-
 }
