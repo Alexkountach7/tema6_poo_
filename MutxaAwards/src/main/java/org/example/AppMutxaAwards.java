@@ -6,6 +6,7 @@ public class AppMutxaAwards {
     static void main() {
         ArrayList<AccionesAsistentes> asistentes = new ArrayList<>();
         ArrayList<Presentador>listapresentador = new ArrayList<>();
+        ArrayList<Artista> lista_artist = new ArrayList<>();
         Presentador presentador1 = new Presentador("alex", 2025);
         System.out.println("el presentador "+presentador1.getNombre()+" en la " +presentador1.getEdicion()+" edicion");
         presentador1.obtenerDetalles();
@@ -30,6 +31,24 @@ public class AppMutxaAwards {
         for (AccionesAsistentes acciones : asistentes){
             acciones.aplaudir();
         }
+
+        presentador1.presentar();
+        presentador1.darDiscurso("dana");
+        Premio premio1 = new Premio(2025,Categoria.mejor_actor);
+
+        lista_artist.add(artista1);
+        lista_artist.add(artista2);
+        lista_artist.add(artista3);
+        lista_artist.add(artista4);
+
+        for (Artista artistas : lista_artist){
+            artistas.esNominado(Categoria.mejor_actor);
+        }
+        artista1.ganarPremio(premio1);
+        premio1.setGanador(artista1);
+
+
+
     }
 
 }

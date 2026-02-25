@@ -15,7 +15,7 @@ public class Premio extends MutxaAwards{
 
     @Override
     public void obtenerDetalles() {
-
+        System.out.println("trofeo precioso");
     }
 
     @Override

@@ -15,15 +15,16 @@ public class Artista extends MutxaAwards implements AccionesAsistentes{
     }
 
     public void esNominado(Categoria categoria){
-
+System.out.println("el artista "+getNombre()+ "es nominado a la "+categoria);
     }
 
     public void ganarPremio(Premio premio) {
-
+        listapremio.add(premio);
+    System.out.println("el artista es ganador de "+premio);
     }
 
     public void recogerPremio(Premio premio){
-
+    System.out.println("el artista recoge el "+premio);
     }
 
 
@@ -87,12 +88,12 @@ public class Artista extends MutxaAwards implements AccionesAsistentes{
 
     @Override
     public void darDiscurso(String tematica) {
-        System.out.println("El artista da un discurso");
+        System.out.println("El artista "+getNombre()+" da un discurso sobre "+tematica);
     }
 
     @Override
     public void celebrarPremio(Premio premio) {
-
+        System.out.println("el artista "+getNombre()+" celebra el premio"+premio);
     }
 
 

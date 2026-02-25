@@ -11,7 +11,7 @@ public class Presentador extends MutxaAwards implements AccionesAsistentes{
     }
 
     public void presentar(){
-
+        System.out.println("el presentador" +getNombre()+" empieza a presentar la gala");
     }
     public void entregarPremio(Premio premio){
 
@@ -49,7 +49,7 @@ public class Presentador extends MutxaAwards implements AccionesAsistentes{
 
     @Override
     public void darDiscurso(String tematica) {
-
+        System.out.println("el presentador da un discurso de la gala sonre "+tematica);
     }
 
     @Override
