@@ -47,6 +47,14 @@ public class AppMutxaAwards {
         artista1.ganarPremio(premio1);
         premio1.setGanador(artista1);
 
+        for(AccionesAsistentes asistentes_ : asistentes){
+            asistentes_.aplaudir();
+           // asistentes_.celebrarPremio(premio1);
+
+        }
+
+
+
 
 
     }

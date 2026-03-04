@@ -20,11 +20,15 @@ System.out.println("el artista "+getNombre()+ "es nominado a la "+categoria);
 
     public void ganarPremio(Premio premio) {
         listapremio.add(premio);
+        premio.setGanador(this);
     System.out.println("el artista es ganador de "+premio);
     }
 
-    public void recogerPremio(Premio premio){
-    System.out.println("el artista recoge el "+premio);
+    public void recogerPremio(Premio premio) throws Excepcionpremio {
+        if (!listapremio.contains(premio)){
+            throw new Excepcionpremio();
+        }
+        System.out.println("el artista recoge el "+premio);
     }
 
 
@@ -58,6 +62,7 @@ System.out.println("el artista "+getNombre()+ "es nominado a la "+categoria);
     public String getNombre() {
         return nombre;
     }
+
 
     public void setCategorias(ArrayList<Categoria> categorias) {
         this.categorias = categorias;
